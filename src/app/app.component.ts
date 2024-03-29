@@ -1,13 +1,25 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TableComponent } from './table/table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, TableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'angular-directives';
+  public buttonClicked = false;
+
+  showTable(){
+    if (this.buttonClicked) {
+      this.buttonClicked = false;
+    } else {
+      this.buttonClicked = true;
+    }
+    console.log(this.buttonClicked);
+    
+  }
 }

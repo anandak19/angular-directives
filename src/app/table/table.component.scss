@@ -1,0 +1,12 @@
+.table-container{
+    width: 100vw;
+    margin: 14px 0;
+    &__head{
+        background-color: #333;
+        color: #fff;
+        font-weight: bold;
+    }
+    &__btn-cell{
+        text-align: center;
+    }
+}

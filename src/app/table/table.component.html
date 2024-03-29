@@ -1,0 +1,139 @@
+<div class="table-container container bg-body-secondary">
+  <table class="table table-bordered">
+    <thead class="table-container__head">
+      <tr>
+        <th class="bg-success text-light"
+        [ngStyle]="{
+          'font-family': idStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': idStyleChanged ? '800' : 200,
+          'text-align' : idStyleChanged ? 'center' : 'left'
+        }"
+        >ID</th>
+
+        <th class="bg-success text-light"
+        [ngStyle]="{
+          'font-family': nameStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': nameStyleChanged ? '800' : 200,
+          'text-align' : nameStyleChanged ? 'center' : 'left'
+        }"
+        >Name</th>
+
+        <th class="bg-success text-light"
+        [ngStyle]="{
+          'font-family': emailStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': emailStyleChanged ? '800' : 200,
+          'text-align' : emailStyleChanged ? 'center' : 'left'
+        }"
+        >Email</th>
+
+        <th class="bg-success text-light"
+        [ngStyle]="{
+          'font-family': placeStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': placeStyleChanged ? '800' : 200,
+          'text-align' : placeStyleChanged ? 'center' : 'left'
+        }"
+        >Place</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for(person of people; track person.id){
+      <tr>
+        <td
+          [ngStyle]="{
+            'background-color': idStyleChanged ? '#86f7c8' : '#8ab4eb',
+            'font-family': idStyleChanged ? 'Times New Roman' : 'arial',
+            'font-weight': idStyleChanged ? '800' : 200,
+            'text-align' : idStyleChanged ? 'center' : 'left'
+          }"
+          >{{ person.id }}</td>
+
+        <td
+        [ngStyle]="{
+          'background-color': nameStyleChanged ? '#86f7c8' : '#8ab4eb',
+          'font-family': nameStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': nameStyleChanged ? '800' : 200,
+          'text-align' : nameStyleChanged ? 'center' : 'left'
+        }"
+        >{{ person.name }}</td>
+
+        <td
+        [ngStyle]="{
+          'background-color': emailStyleChanged ? '#86f7c8' : '#8ab4eb',
+          'font-family': emailStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': emailStyleChanged ? '800' : 200,
+          'text-align' : emailStyleChanged ? 'center' : 'left'
+        }"
+        >{{ person.email }}</td>
+
+        <td
+        [ngStyle]="{
+          'background-color': placeStyleChanged ? '#86f7c8' : '#8ab4eb',
+          'font-family': placeStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': placeStyleChanged ? '800' : 200,
+          'text-align' : placeStyleChanged ? 'center' : 'left'
+        }"
+        >{{ person.place }}</td>
+      </tr>
+      }@empty {
+      <tr>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      }
+
+
+      <tr>
+        <td class="table-container__btn-cell"
+        [ngStyle]="{
+          'background-color': idStyleChanged ? '#86f7c8' : '#8ab4eb',
+          'font-family': idStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': idStyleChanged ? '800' : 200
+        }"
+        >
+          <button class="btn btn-primary" (click)="changeIdStyle()">
+            Change style
+          </button>
+        </td>
+
+        <td class="table-container__btn-cell"
+        [ngStyle]="{
+          'background-color': nameStyleChanged ? '#86f7c8' : '#8ab4eb',
+          'font-family': nameStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': nameStyleChanged ? '800' : 200
+        }"
+        >
+          <button class="btn btn-primary" (click)="changeNameStyle()">
+            Change style
+          </button>
+        </td>
+
+        <td class="table-container__btn-cell"
+        [ngStyle]="{
+          'background-color': emailStyleChanged ? '#86f7c8' : '#8ab4eb',
+          'font-family': emailStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': emailStyleChanged ? '800' : 200
+        }"
+        >
+          <button class="btn btn-primary" (click)="changeEmailStyle()">
+            Change style
+          </button>
+        </td>
+
+        <td class="table-container__btn-cell"
+        [ngStyle]="{
+          'background-color': placeStyleChanged ? '#86f7c8' : '#8ab4eb',
+          'font-family': placeStyleChanged ? 'Times New Roman' : 'arial',
+          'font-weight': placeStyleChanged ? '800' : 200
+        }"
+        >
+          <button class="btn btn-primary" (click)="changePlaceStyle()">
+            Change style
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
